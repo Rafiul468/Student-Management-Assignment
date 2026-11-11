@@ -57,13 +57,9 @@ def menu():
                 student.view_student_info()
 
         elif choice == '2' or choice == '3':
-            try:
-                sid = input('Enter student ID: ')
-            except ValueError:
-                print('Error: ID must be a number')
-                continue
-
+            sid = input('Enter student ID: ').strip()
             student = find_student(sid)
+            
             if student is None:
                 print('Error: Invalid student ID.')
             elif choice == '2':
